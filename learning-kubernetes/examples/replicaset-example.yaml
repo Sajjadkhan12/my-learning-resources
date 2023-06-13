@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-rpc
+  labels:
+    name: nginx-server
+    app : nginx
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: nginx-rpc
+      labels:
+        name: nginx-server
+        app : nginx
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 8081
+  replicas: 3
+  selector:
+    matchLabels:  
+      app : nginx
+
+    

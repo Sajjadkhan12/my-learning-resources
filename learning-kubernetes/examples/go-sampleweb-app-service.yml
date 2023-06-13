@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  name: go-webapp-service
+
+spec: 
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30001
+  selector:
+    type: webapp

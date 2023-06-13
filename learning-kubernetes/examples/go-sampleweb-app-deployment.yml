@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: go-webapp-sample
+  labels: 
+    type: webapp 
+spec:
+  template:
+      metadata: 
+        name: go-webapp-sample
+        labels: 
+          type: webapp 
+      spec:
+        containers:
+          - name: go-webapp-sample
+            image: nginx
+  selector: 
+    matchLabels:
+      type: webapp
+  replicas: 3
