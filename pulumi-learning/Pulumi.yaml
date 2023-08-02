@@ -1,0 +1,6 @@
+name: aws-s3-bucket
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: s3 bucket creating using pulumi
